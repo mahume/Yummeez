@@ -10,6 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Routes
-app.use('/', routes);
+app.use(routes);
 
 module.exports = app;
