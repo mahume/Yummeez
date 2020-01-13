@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const app = require('./app');
 const { mongodbURI } = require('./config/keys');
 
+const PORT = process.env.PORT || 8080;
+
 // Connect to Database
 mongoose
   .connect(mongodbURI, {
@@ -11,6 +13,5 @@ mongoose
   .then(() => console.log('Connected to DB'))
   .catch(err => console.error('DB connection error: ', error));
 
-const PORT = process.env.PORT || 8080;
-
+// Listen on server
 app.listen(PORT, () => console.log(`App listening on ${PORT}`));
